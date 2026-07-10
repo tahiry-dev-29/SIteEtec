@@ -1,19 +1,19 @@
 # 🎓 ETEC University — Frontend
 
-**Plateforme de gestion universitaire** — Frontend React moderne pour la gestion des étudiants, enseignants, cours, notes, présences et administrations de l'École de Technologie et de Commerce (ETEC).
+**University management platform** — Modern React frontend for managing students, teachers, courses, grades, attendance, and administration at the School of Technology and Commerce (ETEC).
 
 ---
 
-## ✨ Aperçu
+## ✨ Overview
 
 | Section | Description |
 |---------|-------------|
-| 🏠 **Pages publiques** | Accueil, formations, actualités, contact, admissions |
-| 🔐 **Authentification** | Login/register rôles : Admin · Enseignant · Étudiant |
-| 🧑‍💼 **Dashboard Admin** | Gestion des utilisateurs, formations, notes, emplois du temps, actualités, slides |
-| 👨‍🏫 **Dashboard Enseignant** | Cours, évaluations, ressources, notifications, messagerie |
-| 👨‍🎓 **Dashboard Étudiant** | Cours en ligne, notes, emploi du temps, progression, quiz |
-| 🌐 **i18n** | Multilingue : Français · Anglais · Malagasy |
+| 🏠 **Public pages** | Home, programs, news, contact, admissions |
+| 🔐 **Authentication** | Login/register with roles: Admin · Teacher · Student |
+| 🧑‍💼 **Admin Dashboard** | User management, programs, grades, schedules, news, slides |
+| 👨‍🏫 **Teacher Dashboard** | Courses, evaluations, resources, notifications, messaging |
+| 👨‍🎓 **Student Dashboard** | Online courses, grades, schedule, progress, quizzes |
+| 🌐 **i18n** | Multilingual: French · English · Malagasy |
 
 ---
 
@@ -21,31 +21,31 @@
 
 ```
 src/
-├── assets/              # Images, icônes, fonts
-├── components/          # Composants réutilisables
+├── assets/              # Images, icons, fonts
+├── components/          # Reusable UI components
 ├── config/              # i18n, providers
-├── context/             # React context (theme, langue)
-├── feature/             # Modules métier (auth, news, events)
+├── context/             # React context (theme, language)
+├── feature/             # Feature modules (auth, news, events)
 ├── hooks/               # Custom hooks (useTranslation)
-├── layouts/             # Layouts des dashboards
+├── layouts/             # Dashboard layouts
 │   ├── DashbordAdmin/
 │   ├── DashboardEnseignants/
 │   └── DashboardEtud/
-├── locales/             # Traductions (en, fr, mg)
-├── pages/               # Pages publiques
-├── routes/              # Configuration des routes
+├── locales/             # Translations (en, fr, mg)
+├── pages/               # Public pages
+├── routes/              # Route configuration
 ├── services/            # API client (axios, ApiService)
-├── styles/              # CSS global
+├── styles/              # Global CSS
 ├── types/               # TypeScript types
-└── utils/               # Fonctions utilitaires
+└── utils/               # Utility functions
 ```
 
 ---
 
-## 🛠️ Stack Technique
+## 🛠️ Tech Stack
 
-| Technologie | Version |
-|-------------|---------|
+| Technology | Version |
+|------------|---------|
 | [React](https://react.dev) | 19.2 |
 | [Vite](https://vitejs.dev) | 8.0 |
 | [TypeScript](https://www.typescriptlang.org) | ~5.8 |
@@ -60,36 +60,32 @@ src/
 
 ---
 
-## 🚀 Démarrage Rapide
+## 🚀 Quick Start
 
-### Prérequis
+### Prerequisites
 
 - **Node.js** ≥ 22
-- **npm** ≥ 10 ou **Node.js** ≥ 22
-- Backend ETEC en cours d'exécution (voir [backend](../backend))
+- **npm** ≥ 10
+- ETEC Backend running (see [backend](../backend))
 
 ### Installation
 
 ```bash
-# Cloner le projet
 git clone https://github.com/tahiry-dev-29/SIteEtec.git
 cd SIteEtec/frontend
 
-# Installer les dépendances
 npm install
-
-# Lancer le serveur de développement
 npm run dev
 ```
 
-### Scripts Disponibles
+### Available Scripts
 
-| Commande | Description |
-|----------|-------------|
-| `npm run dev` | Lance le serveur de développement (port 5173) |
-| `npm run build` | Build de production dans `dist/` |
-| `npm run preview` | Prévisualisation du build |
-| `npm run lint` | Vérification ESLint |
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server on port 5173 |
+| `npm run build` | Build for production into `dist/` |
+| `npm run preview` | Preview the production build |
+| `npm run lint` | Run ESLint checks |
 
 ### Configuration
 
@@ -114,69 +110,69 @@ graph LR
     Gateway --> 20more[+20 Microservices]
 ```
 
-Le frontend communique avec l'**API Gateway** Spring Boot (port `8090`) qui route vers les microservices backend.
+The frontend communicates with the Spring Boot **API Gateway** (port `8090`) which routes requests to backend microservices.
 
-### Services Connectés
+### Connected Services
 
-| Service | Endpoint Gateway | Microservice |
+| Service | Gateway Endpoint | Microservice |
 |---------|-----------------|--------------|
-| Authentification | `/auth/**` | `utilisateur` |
+| Authentication | `/auth/**` | `utilisateur` |
 | Admins | `/api/admins` | `admin` |
-| Étudiants | `/api/etudiants` | `etudiant` |
-| Enseignants | `/api/enseignants` | `enseignant` |
-| Cours en ligne | `/api/cours` | `coursenligne` |
-| Actualités | `/api/actualites` | `actualite` |
-| Notes | `/api/notes` | `note` |
-| Emplois du temps | `/api/emploiDuTemps` | `empoiDuTemps` |
-| + 20 autres services | … | … |
+| Students | `/api/etudiants` | `etudiant` |
+| Teachers | `/api/enseignants` | `enseignant` |
+| Online courses | `/api/cours` | `coursenligne` |
+| News | `/api/actualites` | `actualite` |
+| Grades | `/api/notes` | `note` |
+| Schedules | `/api/emploiDuTemps` | `empoiDuTemps` |
+| +20 more services | … | … |
 
-> 📖 Voir le [README du backend](../backend/README.md) pour la liste complète.
+> 📖 See the [backend README](../backend/README.md) for the full list.
 
 ---
 
-## 🌍 Internationalisation
+## 🌍 Internationalization
 
-Le projet supporte 3 langues via `i18next` :
+The project supports 3 languages via `i18next`:
 
-| Langue | Fichier |
-|--------|---------|
-| 🇫🇷 Français | `src/locales/fr/common.json` |
+| Language | File |
+|----------|------|
+| 🇫🇷 French | `src/locales/fr/common.json` |
 | 🇬🇧 English | `src/locales/en/common.json` |
 | 🇲🇬 Malagasy | `src/locales/mg/common.json` |
 
-Le changement de langue se fait via le `LanguageSwitcher` dans la `TopBar`.
+Language switching is handled by the `LanguageSwitcher` component in the `TopBar`.
 
 ---
 
-## 👨‍💻 Développement
+## 👨‍💻 Development
 
 ### Conventions
 
-- **Composants** : Fonctionnels avec hooks (`useState`, `useEffect`)
-- **State management** : Context API + localStorage pour l'auth
-- **API** : `ApiService.ts` centralise tous les appels axios
-- **Routes** : Définies dans `src/routes/AppRoutes.tsx`
-- **Styles** : Tailwind CSS utility-first + CSS modules si nécessaire
+- **Components**: Functional with hooks (`useState`, `useEffect`)
+- **State management**: Context API + localStorage for auth
+- **API**: `ApiService.ts` centralizes all axios calls
+- **Routes**: Defined in `src/routes/AppRoutes.tsx`
+- **Styles**: Tailwind CSS utility-first
 
-### Organisation des Dashboards
+### Dashboard Structure
 
 ```
 layouts/
-├── DashbordAdmin/          # CRUD complet pour chaque entité
-├── DashboardEnseignants/   # Cours, évaluations, ressources
-└── DashboardEtud/          # Cours en ligne, notes, progression
+├── DashbordAdmin/          # Full CRUD for each entity
+├── DashboardEnseignants/   # Courses, evaluations, resources
+└── DashboardEtud/          # Online courses, grades, progress
 ```
 
 ---
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-1. Crée une branche feature : `git checkout -b feat/ma-feature`
-2. Commit avec [Conventional Commits](https://www.conventionalcommits.org)
-3. Ouvre une Pull Request vers `main`
+1. Create a feature branch: `git checkout -b feat/my-feature`
+2. Commit using [Conventional Commits](https://www.conventionalcommits.org)
+3. Open a Pull Request to `main`
 
 ---
 
-## 📄 Licence
+## 📄 License
 
-Projet privé — ETEC University
+Private project — ETEC University
