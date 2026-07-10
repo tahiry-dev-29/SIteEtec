@@ -65,7 +65,7 @@ src/
 ### Prérequis
 
 - **Node.js** ≥ 22
-- **pnpm** ≥ 9 (ou npm/yarn)
+- **npm** ≥ 10 ou **Node.js** ≥ 22
 - Backend ETEC en cours d'exécution (voir [backend](../backend))
 
 ### Installation
@@ -76,20 +76,20 @@ git clone https://github.com/tahiry-dev-29/SIteEtec.git
 cd SIteEtec/frontend
 
 # Installer les dépendances
-pnpm install
+npm install
 
 # Lancer le serveur de développement
-pnpm dev
+npm run dev
 ```
 
 ### Scripts Disponibles
 
 | Commande | Description |
 |----------|-------------|
-| `pnpm dev` | Lance le serveur de développement (port 5173) |
-| `pnpm build` | Build de production dans `dist/` |
-| `pnpm preview` | Prévisualisation du build |
-| `pnpm lint` | Vérification ESLint |
+| `npm run dev` | Lance le serveur de développement (port 5173) |
+| `npm run build` | Build de production dans `dist/` |
+| `npm run preview` | Prévisualisation du build |
+| `npm run lint` | Vérification ESLint |
 
 ### Configuration
 
@@ -101,6 +101,18 @@ VITE_API_GATEWAY_URL=http://localhost:8090
 ---
 
 ## 🔌 API & Backend
+
+```mermaid
+graph LR
+    Frontend[React Frontend :5173] --> Gateway[API Gateway :8090]
+    Gateway --> Auth[Auth Service]
+    Gateway --> Admin[Admin Service]
+    Gateway --> Courses[Courses Service]
+    Gateway --> Notes[Notes Service]
+    Gateway --> Etu[Student Service]
+    Gateway --> Ens[Teacher Service]
+    Gateway --> 20more[+20 Microservices]
+```
 
 Le frontend communique avec l'**API Gateway** Spring Boot (port `8090`) qui route vers les microservices backend.
 
